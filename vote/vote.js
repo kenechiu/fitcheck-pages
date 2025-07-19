@@ -19,7 +19,7 @@ async function fetchOutfit() {
     .single();
 
   if (!data) {
-    document.getElementById('content').innerHTML = "Invalid link 😔";
+    document.getElementById('content').innerHTML = "Invalid link";
     return;
   }
 
@@ -27,12 +27,29 @@ async function fetchOutfit() {
 
   const { data: outfit } = await supabase
     .from('outfits')
-    .select('caption, media_url')
+    .select('caption, media_urls')
     .eq('id', outfitId)
     .single();
 
-  document.getElementById('outfit-photo').src = outfit.media_url;
   document.getElementById('caption').innerText = outfit.caption;
+
+  const imagesContainer = document.getElementById('images');
+  imagesContainer.innerHTML = ''; // clear existing
+
+  if (Array.isArray(outfit.media_urls)) {
+    outfit.media_urls.forEach(url => {
+      const img = document.createElement('img');
+      img.src = url;
+      img.alt = "Outfit image";
+      img.style.width = "120px";
+      img.style.height = "120px";
+      img.style.objectFit = "cover";
+      img.style.borderRadius = "8px";
+      imagesContainer.appendChild(img);
+    });
+  } else {
+    imagesContainer.innerHTML = "No images";
+  }
 }
 
 document.getElementById('hot-btn').addEventListener('click', () => {
