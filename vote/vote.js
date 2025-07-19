@@ -45,11 +45,28 @@ async function fetchOutfit() {
       img.style.height = "120px";
       img.style.objectFit = "cover";
       img.style.borderRadius = "8px";
+      img.style.cursor = "pointer";
+
+      img.onclick = () => openModal(url);
       imagesContainer.appendChild(img);
     });
   } else {
     imagesContainer.innerHTML = "No images";
   }
+}
+
+function openModal(url) {
+  const modal = document.getElementById('modal');
+  const modalImg = document.getElementById('modal-img');
+  modalImg.src = url;
+  modal.style.display = 'flex';
+}
+
+function closeModal() {
+  const modal = document.getElementById('modal');
+  modal.style.display = 'none';
+  const modalImg = document.getElementById('modal-img');
+  modalImg.src = '';
 }
 
 document.getElementById('hot-btn').addEventListener('click', () => {
