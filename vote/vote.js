@@ -1,0 +1,67 @@
+const supabase = supabase.createClient(
+  'https://admzruvjhjblgqrrrbis.supabase.co',
+  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFkbXpydXZqaGpibGdxcnJyYmlzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAyODAxNTQsImV4cCI6MjA2NTg1NjE1NH0.tw-0Wbp_SyXsDswWTamGTglZiddnjFr6QVsk1K0HI98'
+);
+
+const params = new URLSearchParams(window.location.search);
+const slug = params.get('slug');
+
+let outfitId = null;
+let selectedVote = null;
+
+async function fetchOutfit() {
+  const { data, error } = await supabase
+    .from('outfits_links')
+    .select('outfit_id')
+    .eq('slug', slug)
+    .single();
+
+  if (!data) {
+    document.getElementById('content').innerHTML = "Invalid link 😔";
+    return;
+  }
+
+  outfitId = data.outfit_id;
+
+  const { data: outfit } = await supabase
+    .from('outfits')
+    .select('caption, media_url')
+    .eq('id', outfitId)
+    .single();
+
+  document.getElementById('outfit-photo').src = outfit.media_url;
+  document.getElementById('caption').innerText = outfit.caption;
+}
+
+document.getElementById('hot-btn').addEventListener('click', () => {
+  selectedVote = 'hot';
+  document.getElementById('phone-section').style.display = 'block';
+});
+document.getElementById('cold-btn').addEventListener('click', () => {
+  selectedVote = 'cold';
+  document.getElementById('phone-section').style.display = 'block';
+});
+
+document.getElementById('send-code').addEventListener('click', async () => {
+  const phone = document.getElementById('phone').value;
+  await supabase.auth.signInWithOtp({ phone });
+  document.getElementById('code-section').style.display = 'block';
+});
+
+document.getElementById('verify').addEventListener('click', async () => {
+  const phone = document.getElementById('phone').value;
+  const otp = document.getElementById('otp').value;
+
+  const { data, error } = await supabase.auth.verifyOtp({ phone, token: otp, type: 'sms' });
+
+  if (data?.session) {
+    await supabase
+      .from('votes')
+      .insert({ outfit_id: outfitId, phone_number: phone, vote_value: selectedVote });
+    document.getElementById('thanks').style.display = 'block';
+  } else {
+    alert("Failed to verify, try again!");
+  }
+});
+
+fetchOutfit();
