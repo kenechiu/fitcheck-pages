@@ -3,12 +3,38 @@ body {
   text-align: center;
   margin: 0;
   padding: 20px;
+  background-color: #fafafa;
+  color: #333;
 }
 
-#outfit-photo {
-  max-width: 90%;
+#content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+#images img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 8px;
-  margin: 10px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+#images img:hover {
+  transform: scale(1.03);
+}
+
+#caption {
+  font-size: 1.1rem;
+  margin: 15px 0 20px 0;
 }
 
 button {
@@ -17,6 +43,12 @@ button {
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
 }
 
 button#hot-btn {
@@ -24,7 +56,37 @@ button#hot-btn {
   color: white;
 }
 
+button#hot-btn:hover {
+  background-color: #7C3AED;
+}
+
 button#cold-btn {
   background-color: #EDF2F7;
   color: #333;
+}
+
+button#cold-btn:hover {
+  background-color: #E2E8F0;
+}
+
+#phone-section,
+#code-section {
+  margin-top: 20px;
+}
+
+input[type="tel"],
+input[type="text"] {
+  padding: 8px;
+  font-size: 1rem;
+  width: 200px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#thanks {
+  margin-top: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #2f855a;
 }
