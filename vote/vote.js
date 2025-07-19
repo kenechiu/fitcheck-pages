@@ -3,8 +3,10 @@ const supabase = supabase.createClient(
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFkbXpydXZqaGpibGdxcnJyYmlzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTAyODAxNTQsImV4cCI6MjA2NTg1NjE1NH0.tw-0Wbp_SyXsDswWTamGTglZiddnjFr6QVsk1K0HI98'
 );
 
-const params = new URLSearchParams(window.location.search);
-const slug = params.get('slug');
+const pathParts = window.location.pathname.split('/');
+
+// assumes the slug is the LAST part of the path
+const slug = pathParts[pathParts.length - 1];
 
 let outfitId = null;
 let selectedVote = null;
