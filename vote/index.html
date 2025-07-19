@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vote on Outfit</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+<script src="vote.js" defer></script>
+</head>
+<body>
+  <div id="content">
+    <img id="outfit-photo" src="" alt="Outfit" />
+    <p id="caption"></p>
+    <button id="hot-btn">🔥</button>
+    <button id="cold-btn">🧊</button>
+
+    <div id="phone-section" style="display:none;">
+      <input type="tel" id="phone" placeholder="Enter your phone">
+      <button id="send-code">Send Code</button>
+    </div>
+
+    <div id="code-section" style="display:none;">
+      <input type="text" id="otp" placeholder="Enter OTP">
+      <button id="verify">Verify & Vote</button>
+    </div>
+
+    <div id="thanks" style="display:none;">🎉 Thanks for voting!</div>
+  </div>
+</body>
+</html>
