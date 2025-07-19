@@ -1,0 +1,30 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+#outfit-photo {
+  max-width: 90%;
+  border-radius: 8px;
+  margin: 10px 0;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+button#hot-btn {
+  background-color: #9F7AEA;
+  color: white;
+}
+
+button#cold-btn {
+  background-color: #EDF2F7;
+  color: #333;
+}
