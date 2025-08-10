@@ -1,0 +1,17 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["YOUR_TEAM_ID.co.modaai.app"],
+        "components": [
+          { "/": "/invite/*" },
+          { "/": "/auth-callback/*" },
+          { "/": "/login-callback/*" },
+          { "/": "/email-confirmation/*" },
+          { "/": "/reset-callback/*" },
+          { "/": "/" }
+        ]
+      }
+    ]
+  }
+}
