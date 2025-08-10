@@ -2,7 +2,7 @@
   "applinks": {
     "details": [
       {
-        "appIDs": ["YOUR_TEAM_ID.co.modaai.app"],
+        "appIDs": ["YOUR_TEAM_ID.com.modaai"],
         "components": [
           { "/": "/invite/*" },
           { "/": "/auth-callback/*" },
