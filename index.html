@@ -26,8 +26,16 @@
             font-family: 'Pacifico', cursive;
             font-size: 4rem;
             color: #884DD5;
+            margin-bottom: -0.9rem;
+            text-align: center;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: #666;
             margin-bottom: 3rem;
             text-align: center;
+            font-weight: 300;
         }
 
         .waitlist-container {
@@ -115,9 +123,26 @@
             opacity: 0;
         }
 
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-top: 1px solid #e1e5e9;
+            font-size: 0.875rem;
+            color: #666;
+        }
+
         @media (max-width: 480px) {
             .logo {
                 font-size: 3rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
             }
             
             .waitlist-title {
@@ -128,9 +153,10 @@
 </head>
 <body>
     <div class="logo">moda</div>
+    <div class="tagline">A new kind of style companion</div>
     
     <div class="waitlist-container">
-        <h2 class="waitlist-title">Join the waitlist</h2>
+        <h2 class="waitlist-title">Early access by invite — join the waitlist</h2>
         
         <form class="waitlist-form" id="waitlistForm">
             <input 
@@ -161,6 +187,10 @@
         
         <div id="messageContainer"></div>
     </div>
+
+    <footer class="footer">
+        © 2025 Moda
+    </footer>
 
     <script>
         const form = document.getElementById('waitlistForm');
