@@ -4,11 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moda</title>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <style>
         * {
             margin: 0;
@@ -17,89 +18,176 @@
         }
 
         body {
-            height: 100vh;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #F8F0FF, #F5EBFF);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+            color: #330066;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 3rem;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            border-bottom: 1px solid rgba(138, 43, 226, 0.1);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #884DD5;
+            letter-spacing: -0.02em;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .logo .m-o {
+            display: inline-block;
+        }
+
+        .logo .d-a {
+            display: inline-block;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav a:hover {
+            color: #8A2BE2;
+        }
+
+        /* Hero Section */
+        .hero {
+            flex: 1;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: #f8f9fa;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            text-align: center;
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
         }
 
-        .logo {
-            font-family: 'Pacifico', cursive;
+        .hero h1 {
             font-size: 4rem;
-            color: #884DD5;
-            margin-bottom: -0.9rem;
-            text-align: center;
+            font-weight: 700;
+            color: #1A1A1A;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
         }
 
-        .tagline {
+        .hero .subheading {
             font-size: 1.25rem;
-            color: #666;
+            color: #1A1A1A;
+            font-weight: 400;
             margin-bottom: 3rem;
-            text-align: center;
-            font-weight: 300;
-        }
-
-        .waitlist-container {
-            text-align: center;
-            max-width: 400px;
-            width: 90%;
-        }
-
-        .waitlist-title {
-            font-size: 1.5rem;
-            color: #333;
-            margin-bottom: 2rem;
-            font-weight: 600;
         }
 
         .waitlist-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            max-width: 500px;
+            width: 100%;
             margin-bottom: 1rem;
         }
 
+        .email-input-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .email-input-icon {
+            position: absolute;
+            left: 16px;
+            font-size: 1.5rem;
+            color: #8A2BE2;
+            pointer-events: none;
+            z-index: 1;
+            top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+
         .email-input {
-            padding: 12px 16px;
-            border: 2px solid #e1e5e9;
-            border-radius: 8px;
-            font-size: 1rem;
+            width: 100%;
+            padding: 16px 180px 16px 50px;
+            border: 1px solid rgba(138, 43, 226, 0.08);
+            border-radius: 12px;
+            font-size: 0.9375rem;
+            background-color: #E0CCFF;
+            color: #330066;
             transition: border-color 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .email-input::placeholder {
+            color: #555;
         }
 
         .email-input:focus {
             outline: none;
-            border-color: #884DD5;
+            border-color: rgba(138, 43, 226, 0.2);
         }
 
         .join-button {
-            padding: 12px 24px;
-            background-color: #884DD5;
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px 24px;
+            background-color: #8A2BE2;
             color: white;
             border: none;
             border-radius: 8px;
-            font-size: 1rem;
+            font-size: 0.9375rem;
             font-weight: 600;
             cursor: pointer;
             transition: background-color 0.2s ease;
+            white-space: nowrap;
+            z-index: 1;
+            height: calc(100% - 16px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .join-button:hover:not(:disabled) {
-            background-color: #6b3a9f;
+            background-color: #7A1BD2;
+        }
+
+        .join-button:active:not(:disabled) {
+            background-color: #6A1BC2;
         }
 
         .join-button:disabled {
             background-color: #ccc;
             cursor: not-allowed;
-        }
-
-        .reassurance-text {
-            font-size: 0.875rem;
-            color: #666;
-            line-height: 1.4;
+            transform: translateY(-50%);
         }
 
         .message {
@@ -107,6 +195,8 @@
             padding: 12px;
             border-radius: 8px;
             font-size: 0.875rem;
+            max-width: 500px;
+            width: 100%;
         }
 
         .success {
@@ -127,49 +217,189 @@
             opacity: 0;
         }
 
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
+        /* Horizontal Rule */
+        .divider {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            border: none;
+            border-top: 1px solid rgba(138, 43, 226, 0.1);
+        }
+
+        /* Feature Cards */
+        .features {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 2.5rem;
             text-align: center;
-            padding: 1rem;
-            background-color: #f8f9fa;
-            border-top: 1px solid #e1e5e9;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-icon {
+            font-size: 30px;
+            margin: 0 auto 1.25rem;
+            color: #8A2BE2;
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+
+        .feature-card h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: #330066;
+            margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
             font-size: 0.875rem;
-            color: #666;
+            color: #444;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.875rem;
+            color: #AAAAAA;
+            border-top: 1px solid rgba(138, 43, 226, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1.5rem 2rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subheading {
+                font-size: 1.125rem;
+            }
+
+            .email-input {
+                padding: 16px 140px 16px 50px;
+            }
+
+            .email-input-icon {
+                font-size: 1.35rem;
+            }
+
+            .join-button {
+                padding: 10px 16px;
+                font-size: 0.9rem;
+                right: 6px;
+                height: calc(100% - 12px);
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+                padding: 3rem 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
-            .logo {
-                font-size: 3rem;
+            .header {
+                padding: 1rem 1.5rem;
             }
-            
-            .tagline {
+
+            .logo {
+                font-size: 1.5rem;
+            }
+
+            .nav {
+                gap: 1rem;
+            }
+
+            .nav a {
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subheading {
                 font-size: 1rem;
             }
-            
-            .waitlist-title {
-                font-size: 1.25rem;
+
+            .email-input {
+                padding: 16px 120px 16px 50px;
+            }
+
+            .email-input-icon {
+                font-size: 1.35rem;
+            }
+
+            .join-button {
+                padding: 10px 12px;
+                font-size: 0.85rem;
+                right: 6px;
+                height: calc(100% - 12px);
             }
         }
     </style>
 </head>
 <body>
-    <div class="logo">moda</div>
-    <div class="tagline">A new kind of style companion</div>
-    
-    <div class="waitlist-container">
-        <h2 class="waitlist-title">Early access by invite — join the waitlist</h2>
+    <header class="header">
+        <div class="logo">
+            <span class="m-o">mo</span><span class="d-a">da</span>
+        </div>
+        <nav class="nav">
+            <a href="/terms/">Terms</a>
+            <a href="/privacy/">Privacy</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <h1>Your AI stylist that gets your vibe.</h1>
+        <p class="subheading">Launching soon — be part of the first drop.</p>
         
         <form class="waitlist-form" id="waitlistForm">
-            <input 
-                type="email" 
-                class="email-input" 
-                id="emailInput"
-                placeholder="Enter email address" 
-                required
-            >
+            <div class="email-input-wrapper">
+                <span class="material-symbols-outlined email-input-icon">mail</span>
+                <input 
+                    type="email" 
+                    class="email-input" 
+                    id="emailInput"
+                    placeholder="Enter your email address" 
+                    required
+                >
+                <button type="submit" class="join-button" id="joinButton">
+                    Get Early Access
+                </button>
+            </div>
             
             <!-- Honeypot field to catch bots -->
             <input 
@@ -179,21 +409,31 @@
                 tabindex="-1"
                 autocomplete="off"
             >
-            
-            <button type="submit" class="join-button" id="joinButton">
-                Join
-            </button>
         </form>
         
-        <p class="reassurance-text">
-            No spam. We'll email you when your invite is ready.
-        </p>
-        
         <div id="messageContainer"></div>
-    </div>
+    </main>
+
+    <section class="features">
+        <div class="feature-card">
+            <span class="material-symbols-outlined feature-icon">auto_awesome</span>
+            <h3>Discover Your Vibe</h3>
+            <p>Get looks that actually feel like you — powered by your vibe, goals, and aesthetic.</p>
+        </div>
+        <div class="feature-card">
+            <span class="material-symbols-outlined feature-icon">forum</span>
+            <h3>Chat With Moda</h3>
+            <p>Ask questions, get inspo, and real-time style advice. It's like texting your most stylish friend.</p>
+        </div>
+        <div class="feature-card">
+            <span class="material-symbols-outlined feature-icon">favorite</span>
+            <h3>Save the Fits You Love</h3>
+            <p>Keep your favorite outfits and pieces in one place — your digital wardrobe, made personal.</p>
+        </div>
+    </section>
 
     <footer class="footer">
-        © 2025 Moda
+        © 2025 Moda. All rights reserved.
     </footer>
 
     <script>
@@ -213,7 +453,7 @@
 
         function setLoading(loading) {
             joinButton.disabled = loading;
-            joinButton.textContent = loading ? 'Joining...' : 'Join';
+            joinButton.textContent = loading ? 'Joining...' : 'Get Early Access';
         }
 
         form.addEventListener('submit', async (e) => {

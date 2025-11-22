@@ -4,73 +4,219 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terms of Service | Moda AI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 40px;
-      max-width: 800px;
-      line-height: 1.6;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      min-height: 100vh;
+      background: white;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+      color: #330066;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 3rem;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 600;
+      color: #884DD5;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .logo .m-o {
+      display: inline-block;
+    }
+
+    .logo .d-a {
+      display: inline-block;
+    }
+
+    .nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav a {
+      color: #333;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: #8A2BE2;
+    }
+
+    .nav a.active {
+      color: #8A2BE2;
+      font-weight: 600;
+    }
+
+    /* Content */
+    .content {
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 3rem 3rem 3rem 3rem;
+      background: white;
+      border-radius: 16px;
+      margin-bottom: 2rem;
+    }
+
     h1, h2 {
       color: #884DD5;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
     }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    h2 {
+      margin-top: 2rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    ul {
+      margin-left: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
     a {
-      color: #884DD5;
+      color: #8A2BE2;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .header {
+        padding: 1.5rem 2rem;
+      }
+
+      .content {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header {
+        padding: 1rem 1.5rem;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      .nav {
+        gap: 1rem;
+      }
+
+      .nav a {
+        font-size: 0.9rem;
+      }
+
+      .content {
+        padding: 1.5rem 1rem;
+        margin: 0.5rem;
+      }
     }
   </style>
 </head>
 <body>
+  <header class="header">
+    <a href="/" class="logo">
+      <span class="m-o">mo</span><span class="d-a">da</span>
+    </a>
+    <nav class="nav">
+      <a href="/terms/" class="active">Terms</a>
+      <a href="/privacy/">Privacy</a>
+    </nav>
+  </header>
 
-  <h1>Terms of Service for Moda AI</h1>
-  <p><strong>Effective Date:</strong> July 2025</p>
+  <div class="content">
+    <h1>Terms of Service for Moda</h1>
+    <p><strong>Effective Date:</strong> July 2025</p>
 
-  <h2>1. Acceptance of Terms</h2>
-  <p>By accessing or using the Moda AI app ("Service", "we", "us", "our"), you agree to these Terms of Service ("Terms"). If you do not agree, please do not use the app.</p>
+    <h2>1. Acceptance of Terms</h2>
+    <p>By accessing or using the Moda AI app ("Service", "we", "us", "our"), you agree to these Terms of Service ("Terms"). If you do not agree, please do not use the app.</p>
 
-  <h2>2. Description of the Service</h2>
-  <p>FitCheck AI is an AI-powered personal stylist tool that provides outfit recommendations, style suggestions, and interactive fashion-related experiences.</p>
+    <h2>2. Description of the Service</h2>
+    <p>FitCheck AI is an AI-powered personal stylist tool that provides outfit recommendations, style suggestions, and interactive fashion-related experiences.</p>
 
-  <h2>3. Eligibility</h2>
-  <p>You must be at least 13 years old to use this Service. By using the app, you confirm that you meet this age requirement.</p>
+    <h2>3. Eligibility</h2>
+    <p>You must be at least 13 years old to use this Service. By using the app, you confirm that you meet this age requirement.</p>
 
-  <h2>4. User Content</h2>
-  <p>You may input style preferences, upload closet items, and engage in chat interactions with the AI. You retain ownership of the content you submit.</p>
-  <p>By using the Service, you grant us a license to use, process, and store your content for the purposes of:</p>
-  <ul>
-    <li>Providing personalized recommendations</li>
-    <li>Improving app functionality</li>
-    <li>(With your consent) Training and improving our AI models</li>
-  </ul>
+    <h2>4. User Content</h2>
+    <p>You may input style preferences, upload closet items, and engage in chat interactions with the AI. You retain ownership of the content you submit.</p>
+    <p>By using the Service, you grant us a license to use, process, and store your content for the purposes of:</p>
+    <ul>
+      <li>Providing personalized recommendations</li>
+      <li>Improving app functionality</li>
+      <li>(With your consent) Training and improving our AI models</li>
+    </ul>
 
-  <h2>5. AI-Generated Content Disclaimer</h2>
-  <p>Our style suggestions are generated by artificial intelligence and are for informational and entertainment purposes only. We make no guarantees regarding fit, fashion suitability, or personal safety.</p>
+    <h2>5. AI-Generated Content Disclaimer</h2>
+    <p>Our style suggestions are generated by artificial intelligence and are for informational and entertainment purposes only. We make no guarantees regarding fit, fashion suitability, or personal safety.</p>
 
-  <h2>6. Prohibited Uses</h2>
-  <p>You agree not to:</p>
-  <ul>
-    <li>Use the app for unlawful purposes</li>
-    <li>Upload offensive, hateful, or harmful content</li>
-    <li>Attempt to reverse-engineer, scrape, or misuse the Service</li>
-  </ul>
+    <h2>6. Prohibited Uses</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Use the app for unlawful purposes</li>
+      <li>Upload offensive, hateful, or harmful content</li>
+      <li>Attempt to reverse-engineer, scrape, or misuse the Service</li>
+    </ul>
 
-  <h2>7. Account Termination</h2>
-  <p>We reserve the right to suspend or terminate accounts that violate these Terms or misuse the Service.</p>
+    <h2>7. Account Termination</h2>
+    <p>We reserve the right to suspend or terminate accounts that violate these Terms or misuse the Service.</p>
 
-  <h2>8. Data Handling</h2>
-  <p>Details on how we collect and use your data can be found in our <a href="http://fit-ai.co/privacy">Privacy Policy</a>.</p>
+    <h2>8. Data Handling</h2>
+    <p>Details on how we collect and use your data can be found in our <a href="/privacy/">Privacy Policy</a>.</p>
 
-  <h2>9. Modifications to the Service</h2>
-  <p>We may modify or discontinue parts of the Service at any time without prior notice. We are not liable for any changes or interruptions.</p>
+    <h2>9. Modifications to the Service</h2>
+    <p>We may modify or discontinue parts of the Service at any time without prior notice. We are not liable for any changes or interruptions.</p>
 
-  <h2>10. Limitation of Liability</h2>
-  <p>We are not responsible for any direct, indirect, incidental, or consequential damages arising from your use of the Service.</p>
+    <h2>10. Limitation of Liability</h2>
+    <p>We are not responsible for any direct, indirect, incidental, or consequential damages arising from your use of the Service.</p>
 
-  <h2>11. Governing Law</h2>
-  <p>These Terms are governed by the laws of the State of New York, United States.</p>
+    <h2>11. Governing Law</h2>
+    <p>These Terms are governed by the laws of the State of New York, United States.</p>
 
-  <h2>12. Contact Us</h2>
-  <p>For questions about these Terms:<br>
-  📧 <a href="mailto:support@fit-ai.co">support@fit-ai.co</a></p>
-
+    <h2>12. Contact Us</h2>
+    <p>For questions about these Terms:<br>
+    📧 <a href="mailto:support@moda-ai.co">support@moda-ai.co</a></p>
+  </div>
 </body>
 </html>
