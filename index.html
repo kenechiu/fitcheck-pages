@@ -290,6 +290,16 @@
             border-top: 1px solid rgba(138, 43, 226, 0.1);
         }
 
+        .footer a {
+            color: #AAAAAA;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer a:hover {
+            color: #8A2BE2;
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .header {
@@ -433,7 +443,7 @@
     </section>
 
     <footer class="footer">
-        © 2025 Moda. All rights reserved.
+        © 2025 Moda. All rights reserved. • <a href="#" id="contactLink" data-user="contact" data-domain="stylewithmoda.com">Contact</a>
     </footer>
 
     <script>
@@ -513,6 +523,17 @@
                 setLoading(false);
             }
         });
+
+        // Email obfuscation for contact link
+        (function() {
+            const contactLink = document.getElementById('contactLink');
+            if (contactLink) {
+                const user = contactLink.getAttribute('data-user');
+                const domain = contactLink.getAttribute('data-domain');
+                const email = user + '@' + domain;
+                contactLink.href = 'mailto:' + email;
+            }
+        })();
     </script>
 </body>
 </html>
